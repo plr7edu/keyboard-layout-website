@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Keyboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/x-icon" href="icon/keyboard.ico">
+	<link rel="shortcut icon" href="icon/keyboard.ico">
+</head>
+<body>
+    <!-- Theme Switcher Button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1 class="title">Interactive Keyboard</h1>
+        
+        <!-- Keyboard Container -->
+        <div class="keyboard">
+            <!-- Lock Indicators (free position with x/y via CSS variables) -->
+            <div class="lock-indicator" data-lock="NumLock">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="label">Num</span>
+            </div>
+            <div class="lock-indicator" data-lock="CapsLock">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="label">Caps</span>
+            </div>
+            <div class="lock-indicator" data-lock="ScrollLock">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="label">Scroll</span>
+            </div>
+            <!-- Function Row -->
+            <div class="keyboard-row function-row">
+                <div class="key" data-key="Escape">Esc</div>
+                <div class="gap"></div>
+                <div class="key" data-key="F1">F1</div>
+                <div class="key" data-key="F2">F2</div>
+                <div class="key" data-key="F3">F3</div>
+                <div class="key" data-key="F4">F4</div>
+                <div class="gap"></div>
+                <div class="key" data-key="F5">F5</div>
+                <div class="key" data-key="F6">F6</div>
+                <div class="key" data-key="F7">F7</div>
+                <div class="key" data-key="F8">F8</div>
+                <div class="gap"></div>
+                <div class="key" data-key="F9">F9</div>
+                <div class="key" data-key="F10">F10</div>
+                <div class="key" data-key="F11">F11</div>
+                <div class="key" data-key="F12">F12</div>
+                <div class="gap"></div>
+                <div class="key" data-key="PrintScreen">Print<br>Screen</div>
+                <div class="key" data-key="ScrollLock">Scroll<br>Lock</div>
+                <div class="key" data-key="Pause">Pause<br>Break</div>
+            </div>
+
+            <!-- Number Row -->
+            <div class="keyboard-row number-row">
+                <div class="key" data-key="`" data-shift="~">
+                    <span class="key-top">~</span>
+                    <span class="key-bottom">`</span>
+                </div>
+                <div class="key" data-key="1" data-shift="!">
+                    <span class="key-top">!</span>
+                    <span class="key-bottom">1</span>
+                </div>
+                <div class="key" data-key="2" data-shift="@">
+                    <span class="key-top">@</span>
+                    <span class="key-bottom">2</span>
+                </div>
+                <div class="key" data-key="3" data-shift="#">
+                    <span class="key-top">#</span>
+                    <span class="key-bottom">3</span>
+                </div>
+                <div class="key" data-key="4" data-shift="$">
+                    <span class="key-top">$</span>
+                    <span class="key-bottom">4</span>
+                </div>
+                <div class="key" data-key="5" data-shift="%">
+                    <span class="key-top">%</span>
+                    <span class="key-bottom">5</span>
+                </div>
+                <div class="key" data-key="6" data-shift="^">
+                    <span class="key-top">^</span>
+                    <span class="key-bottom">6</span>
+                </div>
+                <div class="key" data-key="7" data-shift="&">
+                    <span class="key-top">&</span>
+                    <span class="key-bottom">7</span>
+                </div>
+                <div class="key" data-key="8" data-shift="*">
+                    <span class="key-top">*</span>
+                    <span class="key-bottom">8</span>
+                </div>
+                <div class="key" data-key="9" data-shift="(">
+                    <span class="key-top">(</span>
+                    <span class="key-bottom">9</span>
+                </div>
+                <div class="key" data-key="0" data-shift=")">
+                    <span class="key-top">)</span>
+                    <span class="key-bottom">0</span>
+                </div>
+                <div class="key" data-key="-" data-shift="_">
+                    <span class="key-top">_</span>
+                    <span class="key-bottom">-</span>
+                </div>
+                <div class="key" data-key="=" data-shift="+">
+                    <span class="key-top">+</span>
+                    <span class="key-bottom">=</span>
+                </div>
+                <div class="key key-backspace" data-key="Backspace">
+                    <span class="key-top">⌫</span>
+                    <span class="key-bottom">Backspace</span>
+                </div>
+                <div class="gap-nav"></div>
+                <div class="key" data-key="Insert">Insert</div>
+                <div class="key" data-key="Home">Home</div>
+                <div class="key" data-key="PageUp">Page Up</div>
+                <div class="gap-nav"></div>
+                <div class="key" data-key="NumLock">
+                    <svg class="numlock-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="3" y="3" width="6" height="6" fill="currentColor"/>
+                        <rect x="10" y="3" width="6" height="6" fill="currentColor"/>
+                        <rect x="17" y="3" width="4" height="6" fill="currentColor"/>
+                        <rect x="3" y="10" width="6" height="6" fill="currentColor"/>
+                        <rect x="10" y="10" width="6" height="6" fill="currentColor"/>
+                        <rect x="17" y="10" width="4" height="6" fill="currentColor"/>
+                        <rect x="3" y="17" width="6" height="4" fill="currentColor"/>
+                        <rect x="10" y="17" width="6" height="4" fill="currentColor"/>
+                        <rect x="17" y="17" width="4" height="4" fill="currentColor"/>
+                    </svg>
+                    <span class="key-bottom">Num Lock</span>
+                </div>
+                <div class="key" data-key="NumpadDivide">/</div>
+                <div class="key" data-key="NumpadMultiply">*</div>
+                <div class="key" data-key="NumpadSubtract">-</div>
+            </div>
+
+            <!-- Tab Row -->
+            <div class="keyboard-row tab-row">
+                <div class="key key-tab" data-key="Tab">
+                    <span class="key-top">↹</span>
+                    <span class="key-bottom">Tab</span>
+                </div>
+                <div class="key" data-key="Q">Q</div>
+                <div class="key" data-key="W">W</div>
+                <div class="key" data-key="E">E</div>
+                <div class="key" data-key="R">R</div>
+                <div class="key" data-key="T">T</div>
+                <div class="key" data-key="Y">Y</div>
+                <div class="key" data-key="U">U</div>
+                <div class="key" data-key="I">I</div>
+                <div class="key" data-key="O">O</div>
+                <div class="key" data-key="P">P</div>
+                <div class="key" data-key="[" data-shift="{">
+                    <span class="key-top">{</span>
+                    <span class="key-bottom">[</span>
+                </div>
+                <div class="key" data-key="]" data-shift="}">
+                    <span class="key-top">}</span>
+                    <span class="key-bottom">]</span>
+                </div>
+                <div class="key" data-key="Backslash" data-shift="|">
+                    <span class="key-top">|</span>
+                    <span class="key-bottom">\</span>
+                </div>
+                <div class="gap-nav"></div>
+                <div class="key" data-key="Delete">Delete</div>
+                <div class="key" data-key="End">End</div>
+                <div class="key" data-key="PageDown">Page Down</div>
+                <div class="gap-nav"></div>
+                <div class="key" data-key="Numpad7">7<br><span class="numpad-label">Home</span></div>
+                <div class="key" data-key="Numpad8">8<br><span class="numpad-label">↑</span></div>
+                <div class="key" data-key="Numpad9">9<br><span class="numpad-label">PgUp</span></div>
+                <div class="key key-numpad-plus" data-key="NumpadAdd" rowspan="2">+</div>
+            </div>
+
+            <!-- Caps Lock Row -->
+            <div class="keyboard-row caps-row">
+                <div class="key key-caps" data-key="CapsLock">
+                    <span class="key-top">⇪</span>
+                    <span class="key-bottom">
+                        <span class="caps-line">Caps</span>
+                        <span class="caps-line">Lock</span>
+                    </span>
+                </div>
+                <div class="key" data-key="A">A</div>
+                <div class="key" data-key="S">S</div>
+                <div class="key" data-key="D">D</div>
+                <div class="key" data-key="F">F</div>
+                <div class="key" data-key="G">G</div>
+                <div class="key" data-key="H">H</div>
+                <div class="key" data-key="J">J</div>
+                <div class="key" data-key="K">K</div>
+                <div class="key" data-key="L">L</div>
+                <div class="key" data-key=";" data-shift=":">
+                    <span class="key-top">:</span>
+                    <span class="key-bottom">;</span>
+                </div>
+                <div class="key" data-key="'" data-shift="&quot;">
+                    <span class="key-top">"</span>
+                    <span class="key-bottom">'</span>
+                </div>
+                <div class="key key-enter" data-key="Enter">
+                    <span class="key-top">⏎</span>
+                    <span class="key-bottom">Enter</span>
+                </div>
+                <div class="gap-nav-empty"></div>
+                <div class="key" data-key="Numpad4">4<br><span class="numpad-label">←</span></div>
+                <div class="key" data-key="Numpad5">5</div>
+                <div class="key" data-key="Numpad6">6<br><span class="numpad-label">→</span></div>
+            </div>
+
+            <!-- Shift Row -->
+            <div class="keyboard-row shift-row">
+                <div class="key key-shift-left" data-key="ShiftLeft">
+                    <span class="key-top">⇧</span>
+                    <span class="key-bottom">Shift</span>
+                </div>
+                <div class="key" data-key="Z">Z</div>
+                <div class="key" data-key="X">X</div>
+                <div class="key" data-key="C">C</div>
+                <div class="key" data-key="V">V</div>
+                <div class="key" data-key="B">B</div>
+                <div class="key" data-key="N">N</div>
+                <div class="key" data-key="M">M</div>
+                <div class="key" data-key="," data-shift="<">
+                    <span class="key-top">&lt;</span>
+                    <span class="key-bottom">,</span>
+                </div>
+                <div class="key" data-key="." data-shift=">">
+                    <span class="key-top">&gt;</span>
+                    <span class="key-bottom">.</span>
+                </div>
+                <div class="key" data-key="/" data-shift="?">
+                    <span class="key-top">?</span>
+                    <span class="key-bottom">/</span>
+                </div>
+                <div class="key key-shift-right" data-key="ShiftRight">
+                    <span class="key-top">⇧</span>
+                    <span class="key-bottom">Shift</span>
+                </div>
+                <div class="gap-nav-empty"></div>
+                <div class="gap-arrow"></div>
+                <div class="key" data-key="ArrowUp">↑</div>
+                <div class="gap-arrow"></div>
+                <div class="gap-nav"></div>
+                <div class="key" data-key="Numpad1">1<br><span class="numpad-label">End</span></div>
+                <div class="key" data-key="Numpad2">2<br><span class="numpad-label">↓</span></div>
+                <div class="key" data-key="Numpad3">3<br><span class="numpad-label">PgDn</span></div>
+                <div class="key key-numpad-enter" data-key="NumpadEnter">Enter</div>
+            </div>
+
+            <!-- Control Row -->
+            <div class="keyboard-row control-row">
+                <div class="key key-ctrl" data-key="ControlLeft">Ctrl</div>
+                <div class="key key-win" data-key="MetaLeft">
+                    <svg class="win-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="2" y="2" width="9" height="9" fill="currentColor" />
+                        <rect x="13" y="2" width="9" height="9" fill="currentColor" />
+                        <rect x="2" y="13" width="9" height="9" fill="currentColor" />
+                        <rect x="13" y="13" width="9" height="9" fill="currentColor" />
+                    </svg>
+                </div>
+                <div class="key key-alt" data-key="AltLeft">Alt</div>
+                <div class="key key-space" data-key=" "></div>
+                <div class="key key-alt" data-key="AltRight">Alt</div>
+                <div class="key key-win" data-key="MetaRight">
+                    <svg class="win-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="2" y="2" width="9" height="9" fill="currentColor" />
+                        <rect x="13" y="2" width="9" height="9" fill="currentColor" />
+                        <rect x="2" y="13" width="9" height="9" fill="currentColor" />
+                        <rect x="13" y="13" width="9" height="9" fill="currentColor" />
+                    </svg>
+                </div>
+                <div class="key key-menu" data-key="ContextMenu">
+                    <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="3" y="6" width="18" height="2" fill="currentColor"/>
+                        <rect x="3" y="11" width="18" height="2" fill="currentColor"/>
+                        <rect x="3" y="16" width="12" height="2" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="key key-ctrl" data-key="ControlRight">Ctrl</div>
+                <div class="gap-nav-empty"></div>
+                <div class="key" data-key="ArrowLeft">←</div>
+                <div class="key" data-key="ArrowDown">↓</div>
+                <div class="key" data-key="ArrowRight">→</div>
+                <div class="gap-nav"></div>
+                <div class="key key-numpad-zero" data-key="Numpad0">0<br><span class="numpad-label">Ins</span></div>
+                <div class="key" data-key="NumpadDecimal">.<br><span class="numpad-label">Del</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
